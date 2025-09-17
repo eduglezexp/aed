@@ -1,2 +1,2 @@
-# SSG
-Sistemas de gestión empresarial
+# AED
+
