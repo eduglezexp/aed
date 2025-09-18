@@ -336,7 +336,7 @@
     ```php
     function multiplosNumero($numero) {
     	for ($i = $numero; $i <= 100; $i += $numero) {
-    		echo $i . " ";
+    		echo $i . PHP_EOL;
 		}
     }
     
@@ -408,7 +408,7 @@
 - _Salida:_
 
     ```
-    
+    Adivina el número entre 1 y 20:
     ```  
 
 </br>
@@ -422,14 +422,29 @@
 
 - _Código:_
 
-    ```<?php
-
+    ```php
+    function esNumeroPerfecto($numero) {
+        $sumaDivisores = 0;
+        for ($i = 1; $i < $numero; $i++) {
+            if ($numero % $i == 0) {
+                $sumaDivisores += $i;
+            }
+        }
+        return $sumaDivisores === $numero;
+    }
+    
+    $numero = 28;
+    if (esNumeroPerfecto($numero)) {
+        echo "$numero es un numero perfecto";
+    } else {
+        echo "$numero no es un numero perfecto";
+    }
     ```
 
 - _Salida:_
 
     ```
-    
+    28 es un numero perfecto
     ```  
 
 </br>  
@@ -439,14 +454,19 @@
 
 - _Código:_
 
-    ```<?php
+    ```php
+    function invertirNumero($numero) {
+        return strrev($numero);
+    }
 
+    $numero = 456;
+    echo invertirNumero($numero);
     ```
 
 - _Salida:_
 
     ```
-    
+    654
     ```  
 
 </br>
@@ -456,14 +476,25 @@
 
 - _Código:_
 
-    ```<?php
+    ```php
+    function esPalindromo($palabra) {
+        $palabra = strtolower(str_replace(' ', '', $palabra));
+        $palabraInvertida = strrev($palabra);
+        return $palabra === $palabraInvertida;
+    }
 
+    $texto = "Reconocer";
+    if (esPalindromo($texto)) {
+        echo "$texto es un palíndromo.";
+    } else {
+        echo "$texto no es un palíndromo.";
+    }
     ```
 
 - _Salida:_
 
     ```
-    
+    Reconocer es un palíndromo.
     ```  
 
 </br>  
@@ -473,14 +504,27 @@
 
 - _Código:_
 
-    ```<?php
+    ```php
+    function calcularMCD($numeroMayor, $numeroMenor) {
+        while ($numeroMenor != 0) {
+            $resto = $numeroMayor % $numeroMenor;
+            $numeroMayor = $numeroMenor;
+            $numeroMenor = $resto;
+        }
+        return $numeroMayor;
+    }
 
+    $primerNumero = 42;
+    $segundoNumero = 15;
+
+    echo "El MCD de $primerNumero y $segundoNumero es: " 
+         . calcularMCD($primerNumero, $segundoNumero);
     ```
 
 - _Salida:_
 
     ```
-    
+    El MCD de 42 y 15 es: 3
     ```  
 
 </br>
@@ -491,8 +535,18 @@
 
 - _Código:_
 
-    ```<?php
-
+    ```php
+    function construirTriangulo($tamanio) {
+    	for ($i=0; $i < $tamanio; $i++) { 
+          for ($j=0; $j < $i; $j++) { 
+              echo "*";
+          }
+          echo "</br>";
+    	}
+    }
+ 	
+    $tamanio = 6;
+  	construirTriangulo($tamanio);
     ```
 
 - _Salida:_
