@@ -11,13 +11,34 @@ Implementa una función __esCapicua(int $n): bool__ que determine si un número 
 _Código:_
 
 ```php
+function esCapicua(int $numero): bool {
+    $numeroAlReves = strrev((string)$numero);
+    return (string)$numero === $numeroAlReves;
+}
 
+function esCapicuaOtraForma(int $numero): bool {
+    $original = $numero;
+    $invertido = 0;
+    while ($numero > 0) {
+        $digito = $numero % 10;
+        $invertido = $invertido * 10 + $digito;
+        $numero = intdiv($numero, 10);
+    }
+    return $original === $invertido;
+}
+
+$numero = 12321;
+if (esCapicua($numero)) {
+    echo "$numero es capicua";
+} else {
+    echo "$numero no es capicua";
+}
 ```
 
 _Salida:_
 
 ```
-
+12321 es capicua
 ```
 
 ## Escalera de asteriscos
@@ -26,25 +47,38 @@ Implementa una función __montañaAsteriscos(int $n, $m): void__ que imprima una
 
 - La primera fila contiene 1 asterisco, la segunda 2, y así hasta `N`, `M` veces.
 
-> Ejemplo con entrada `4,2`:
-
-```text
-*.     *
-**.   **
-***  ***
-********
-```
-
 _Código:_
 
 ```php
+function montaniaAsteriscos(int $n, int $m): void {
+    for ($i = 1; $i <= $n; $i++) {
+        $line = "";
+        $spaces = str_repeat(" ", $n - $i);
+        $stars  = str_repeat("*", $i);
 
+        for ($j = 0; $j < $m; $j++) {
+            if ($j % 2 != 0) {
+                $line .= $spaces . $stars;
+            } else {
+                $line .= $stars . $spaces;
+            }
+        }
+        echo $line . "\n";
+    }
+}
+
+echo "<pre>";
+montaniaAsteriscos(4, 2);
+echo "</pre>";
 ```
 
 _Salida:_
 
 ```
-
+*      *
+**    **
+***  ***
+********
 ```
 
 ## Suma de dígitos
