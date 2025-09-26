@@ -15,10 +15,16 @@
 
     function leerListaJuegos(): void {
         $path = "resources/ranking.txt";
-        $juegos = explode("\n", file_get_contents($path));
-        sort($juegos);
-        for ($i=0; $i < 3; $i++) { 
-            print("$juegos[$i]\n");
+        $lineas = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $juegos = [];
+        foreach ($lineas as $linea) {
+            [$juego, $puntuacion] = explode(": ", $linea);
+            $juegos[$juego] = $puntuacion;
+        }
+        arsort($juegos);
+        $top = array_slice($juegos, 0, 3, true);
+        foreach ($top as $juego => $puntuacion) {
+            echo "$juego: $puntuacion\n";
         }
     }
 
