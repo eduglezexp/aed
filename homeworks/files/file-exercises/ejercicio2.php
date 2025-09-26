@@ -4,12 +4,9 @@
      * @version 1.0.0
      */
 
-    try {
-        $file = fopen("resources/numeros.txt", "w");
-        if (!$file) {
-            throw new Exception("Archivo no encontrado");
-        }
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+    $file = fopen("resources/numeros.txt", "w");
+    for ($i=1; $i <= 10; $i++) { 
+        fwrite($file, "$i\n");
     }
+    fclose($file);
 ?>
