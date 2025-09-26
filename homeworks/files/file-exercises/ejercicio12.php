@@ -7,11 +7,16 @@
     function guardarPuntuacion(array $juegos): void {
         $path = "resources/ranking.txt";
         $file = fopen($path, "w");
-        arsort($juegos);
-        foreach ($variable as $key => $value) {
-            
+        foreach ($juegos as $juego => $puntuacion) {
+            fwrite($file, "$juego: $puntuacion\n");
         }
+        fclose($file);
+    } 
 
+    function leerListaJuegos(): void {
+        $path = "resources/ranking.txt";
+        $juegos = explode("\n", file_get_contents($path));
+        arsort($juegos);
         $contador=3;
         foreach ($juegos as $juego => $puntuacion) {
             print("$juego: $puntuacion\n");
@@ -20,12 +25,12 @@
                 break;
             }
         }
-
-    } 
+    }
 
     $juegos = ["Zelda" => 10, 
                "Sonic" => 8,
                "Mario" => 9,
                "For Honor" => 9];
     guardarPuntuacion($juegos);
+    leerListaJuegos();
 ?>
