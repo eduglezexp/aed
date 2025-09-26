@@ -16,14 +16,9 @@
     function leerListaJuegos(): void {
         $path = "resources/ranking.txt";
         $juegos = explode("\n", file_get_contents($path));
-        arsort($juegos);
-        $contador=3;
-        foreach ($juegos as $juego => $puntuacion) {
-            print("$juego: $puntuacion\n");
-            $contador--;
-            if($contador<=0){
-                break;
-            }
+        sort($juegos);
+        for ($i=0; $i < 3; $i++) { 
+            print("$juegos[$i]\n");
         }
     }
 
