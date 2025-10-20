@@ -1,6 +1,6 @@
-package com.docencia.ficheros.serializacion;
+package com.docencia.files.serializacion;
 
-class SimpleBean {
+public class SimpleBean {
     private int x = 1;
     private int y = 2;
 

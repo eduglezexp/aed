@@ -1,4 +1,4 @@
-package com.docencia.ficheros.ficheros_serializable;
+package com.docencia.files.ficheros_serializable;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

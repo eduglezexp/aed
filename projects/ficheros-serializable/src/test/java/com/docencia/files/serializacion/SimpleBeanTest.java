@@ -1,4 +1,4 @@
-package com.docencia.ficheros.serializacion;
+package com.docencia.files.serializacion;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
