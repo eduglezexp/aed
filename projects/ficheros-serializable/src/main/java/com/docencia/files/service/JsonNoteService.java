@@ -1,52 +1,42 @@
 package com.docencia.files.service;
 
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.docencia.files.model.Note;
-import com.docencia.files.service.interfaces.INoteService;
+import com.docencia.files.service.abstracts.AbstractNoteService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 
-public class JsonNoteService implements INoteService{
+public class JsonNoteService extends AbstractNoteService {
 
-    @Override
-    public boolean exists(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
-    }
+    JsonMapper jsonMapper;
+    private static Logger logger = LoggerFactory.getLogger(JsonNoteService.class);
 
-    @Override
-    public Note findById(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
-
-    @Override
-    public List<Note> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    @Override
-    public Note save(Note n) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
-    }
-
-    @Override
-    public boolean delete(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public JsonNoteService()  {
+        jsonMapper = new JsonMapper();
+        this.setObjectMapper(jsonMapper);
     }
 
     @Override
     public String noteToString(Note note) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'noteToString'");
+        String resultado = null;
+        try {
+            resultado = jsonMapper.writeValueAsString(note);
+        } catch (JsonProcessingException e) {
+            logger.error("Se ha producido un error en la transformacion de note {}", note, e);
+        }
+        return resultado;
     }
 
     @Override
     public Note stringToNote(String data) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'stringToNote'");
+        Note resultado = null;
+        try {
+            resultado = jsonMapper.readValue(data, Note.class);
+        } catch (JsonProcessingException e) {
+            logger.error("Se ha producido un error en la transformacion de data {}", data, e);
+        }
+        return resultado;
     }
-
 }
