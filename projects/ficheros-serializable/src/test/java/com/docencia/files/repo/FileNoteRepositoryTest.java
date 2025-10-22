@@ -3,10 +3,10 @@ package com.docencia.files.repo;
 import org.junit.jupiter.api.Test;
 
 class FileNoteRepositoryTest {
-    FileNoteRepository fileNoteRepository;
+    XmlNoteRepository fileNoteRepository;
 
     @Test
     void createFileTest() {
-        fileNoteRepository = new FileNoteRepository();
+        fileNoteRepository = new XmlNoteRepository();
     }
 }
