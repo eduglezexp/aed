@@ -1,0 +1,13 @@
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/Main.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/model/Note.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/file/FileNoteJsonRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/file/FileNoteRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/file/FileNoteXmlRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/file/abstracts/FileNoteAbstractRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/interfaces/INoteRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/jpa/ISqliteNoteRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/repo/jpa/NoteJpaRepository.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/service/JsonServiceNote.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/service/XmlServiceNote.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/service/abstracts/ServiceNoteAbstract.java
+/home/dam/dam/repositories/acceso-a-datos/homeworks/spring-data-orm/src/main/java/com/docencia/service/interfaces/IServiceNote.java
