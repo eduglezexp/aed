@@ -2,6 +2,7 @@ package org.docencia.hotel.persistence.jpa;
 
 import org.docencia.hotel.repository.IRoomRepository;
 import org.docencia.hotel.model.Room;
+import org.docencia.hotel.persistence.jpa.abstracts.AbstractJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import jakarta.persistence.TypedQuery;
@@ -14,6 +15,10 @@ import java.util.List;
 
 @Repository
 public class RoomJpaRepository extends AbstractJpaRepository<Room, String> implements IRoomRepository {
+
+    /**
+     * Constructor por defecto
+     */
     public RoomJpaRepository() {
         super(Room.class);
     }

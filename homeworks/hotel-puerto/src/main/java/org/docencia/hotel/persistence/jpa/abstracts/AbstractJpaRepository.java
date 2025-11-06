@@ -1,4 +1,4 @@
-package org.docencia.hotel.persistence.jpa;
+package org.docencia.hotel.persistence.jpa.abstracts;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,11 +13,11 @@ import java.util.List;
 public abstract class AbstractJpaRepository<T, ID> {
 
     @PersistenceContext
-    protected EntityManager entityManager;
+    public EntityManager entityManager;
 
-    protected final Class<T> entityClass;
+    private final Class<T> entityClass;
 
-    protected AbstractJpaRepository(Class<T> entityClass) {
+    public AbstractJpaRepository(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 

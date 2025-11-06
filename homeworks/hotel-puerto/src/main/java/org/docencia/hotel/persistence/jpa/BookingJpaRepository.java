@@ -1,6 +1,7 @@
 package org.docencia.hotel.persistence.jpa;
 
 import org.docencia.hotel.model.Booking;
+import org.docencia.hotel.persistence.jpa.abstracts.AbstractJpaRepository;
 import org.docencia.hotel.repository.IBookingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,9 @@ import java.util.List;
 @Repository
 public class BookingJpaRepository extends AbstractJpaRepository<Booking, String> implements IBookingRepository {
 
+    /**
+     * Constructor por defecto
+     */
     public BookingJpaRepository() { 
         super(Booking.class); 
     }

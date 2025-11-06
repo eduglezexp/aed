@@ -1,6 +1,7 @@
 package org.docencia.hotel.persistence.jpa;
 
 import org.docencia.hotel.model.Guest;
+import org.docencia.hotel.persistence.jpa.abstracts.AbstractJpaRepository;
 import org.docencia.hotel.repository.IGuestRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class GuestJpaRepository extends AbstractJpaRepository<Guest, String> implements IGuestRepository {
 
-    protected GuestJpaRepository() {
+    /**
+     * Constructor por defecto
+     */
+    public GuestJpaRepository() {
         super(Guest.class);
     }
 }
