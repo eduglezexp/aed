@@ -1,10 +1,14 @@
 package org.docencia.hotel.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -20,16 +24,20 @@ public class Hotel {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Room> rooms;
 
     /**
      * Constructor por defecto
      */
     public Hotel() {
+        this.rooms = new ArrayList<>();
     }
 
     /**
@@ -80,10 +88,14 @@ public class Hotel {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "Hotel [id=" + id + ", name=" + name + ", address=" + address + "]";
+    public List<Room> getRooms() {
+        return rooms;
     }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
 
     @Override
     public boolean equals(Object o) {

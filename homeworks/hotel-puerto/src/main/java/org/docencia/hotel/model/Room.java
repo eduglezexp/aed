@@ -1,10 +1,17 @@
 package org.docencia.hotel.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -20,27 +27,33 @@ public class Room {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "number")
+    @Column(name = "number", nullable = false)
     private String number;
 
-    @Column(name = "type")
+    @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "price_per_night")
+    @Column(name = "price_per_night", nullable = false)
     private float pricePerNight;
 
-    @Column(name = "hotel_id")
-    private String hotelId;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "hotel_id", nullable = false)
+    private Hotel hotel;
+
+    @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings;
 
     /**
      * Constructor por defecto
      */
     public Room() {
+        this.bookings = new ArrayList<>();
     }
 
     /**
-     * Constructor con la proiedad 
+     * Constructor con la proiedad
      * identificativa de la entidad
+     * 
      * @param id de la room
      */
     public Room(String id) {
@@ -53,14 +66,14 @@ public class Room {
      * @param number de la room
      * @param type de la room
      * @param pricePerNight de la room
-     * @param hotelId de la room
+     * @param hotel de la room
      */
-    public Room(String id, String number, String type, float pricePerNight, String hotelId) {
+    public Room(String id, String number, String type, float pricePerNight, Hotel hotel) {
         this.id = id;
         this.number = number;
         this.type = type;
         this.pricePerNight = pricePerNight;
-        this.hotelId = hotelId;
+        this.hotel = hotel;
     }
 
     /**
@@ -98,18 +111,12 @@ public class Room {
         this.pricePerNight = pricePerNight;
     }
 
-    public String getHotelId() {
-        return hotelId;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setHotelId(String hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    @Override
-    public String toString() {
-        return "Room [id=" + id + ", number=" + number + ", type=" + type + ", pricePerNight=" + pricePerNight
-                + ", hotelId=" + hotelId + "]";
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
     @Override
@@ -126,5 +133,5 @@ public class Room {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }    
+    }
 }
