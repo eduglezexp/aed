@@ -1,7 +1,8 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Guest;
-import org.docencia.hotel.repository.interfaces.ICrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -9,6 +10,7 @@ import org.docencia.hotel.repository.interfaces.ICrudRepository;
  * @version 1.0.0
  */
 
-public interface IGuestRepository extends ICrudRepository<Guest> {
-    
+@Repository
+public interface IGuestRepository extends JpaRepository<Guest, String> {
+
 }

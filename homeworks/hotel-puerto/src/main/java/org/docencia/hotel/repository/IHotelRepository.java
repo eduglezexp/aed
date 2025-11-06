@@ -1,13 +1,15 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Hotel;
-import org.docencia.hotel.repository.interfaces.ICrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author eduglezexp
  * @version 1.0.0
  */
 
-public interface IHotelRepository extends ICrudRepository<Hotel> {
+@Repository
+public interface IHotelRepository extends JpaRepository<Hotel, String> {
 
 }

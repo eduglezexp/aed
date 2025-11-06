@@ -1,7 +1,8 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Room;
-import org.docencia.hotel.repository.interfaces.ICrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,6 +11,13 @@ import java.util.List;
  * @version 1.0.0
  */
 
-public interface IRoomRepository extends ICrudRepository<Room> {
+@Repository
+public interface IRoomRepository extends JpaRepository<Room, String> {
+
+    /**
+     * Metodo para obtener una hotel dada su id
+     * @param hotelId indentificador del hotel
+     * @return una lista de habitaciones
+     */
     List<Room> findByHotelId(String hotelId);
 }

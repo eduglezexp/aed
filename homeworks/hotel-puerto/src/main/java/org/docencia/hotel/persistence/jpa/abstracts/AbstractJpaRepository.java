@@ -1,7 +1,5 @@
 package org.docencia.hotel.persistence.jpa.abstracts;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import java.util.List;
 
@@ -12,31 +10,27 @@ import java.util.List;
 
 public abstract class AbstractJpaRepository<T, ID> {
 
-    @PersistenceContext
-    public EntityManager entityManager;
+    private final Class<T> repository;
 
-    private final Class<T> entityClass;
-
-    public AbstractJpaRepository(Class<T> entityClass) {
-        this.entityClass = entityClass;
+    public AbstractJpaRepository(Class<T> repository) {
+        this.repository = repository;
     }
 
     public boolean existsById(ID id) {
-        return entityManager.find(entityClass, id) != null;
+        return false;
     }
 
     public T findById(ID id) {
-        return entityManager.find(entityClass, id);
+        return null;
     }
 
     public List<T> findAll() {
-        String querry = "SELECT e FROM " + entityClass.getSimpleName() + " e";
-        return entityManager.createQuery(querry, entityClass).getResultList();
+        return null;
     }
 
     @Transactional
     public T save(T entity) {
-        return entityManager.merge(entity);
+        return null;
     }
 
     @Transactional
@@ -44,7 +38,7 @@ public abstract class AbstractJpaRepository<T, ID> {
         if (!existsById(id)) {
             return false;
         }
-        entityManager.remove(id);
+        
         return true;
     }
 }

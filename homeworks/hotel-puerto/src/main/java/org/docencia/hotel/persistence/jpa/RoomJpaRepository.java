@@ -5,16 +5,15 @@ import org.docencia.hotel.model.Room;
 import org.docencia.hotel.persistence.jpa.abstracts.AbstractJpaRepository;
 import org.springframework.stereotype.Repository;
 
-import jakarta.persistence.TypedQuery;
-import java.util.List;
-
 /**
  * @author eduglezexp
  * @version 1.0.0
  */
 
 @Repository
-public class RoomJpaRepository extends AbstractJpaRepository<Room, String> implements IRoomRepository {
+public class RoomJpaRepository extends AbstractJpaRepository<Room, String> {
+
+    private final IRoomRepository repository;
 
     /**
      * Constructor por defecto
@@ -23,11 +22,9 @@ public class RoomJpaRepository extends AbstractJpaRepository<Room, String> imple
         super(Room.class);
     }
 
-    @Override
-    public List<Room> findByHotelId(String hotelId) {
-        String jpql = "SELECT r FROM Room r WHERE r.hotel.id = :hotelId";
-        TypedQuery<Room> querry = entityManager.createQuery(jpql, Room.class);
-        querry.setParameter("hotelId", hotelId);
-        return querry.getResultList();
+
+
+    public IRoomRepository getRepository() {
+        return repository;
     }
 }

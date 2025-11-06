@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public class GuestJpaRepository extends AbstractJpaRepository<Guest, String> implements IGuestRepository {
+public class GuestJpaRepository extends AbstractJpaRepository<Guest, String> {
 
     /**
      * Constructor por defecto
