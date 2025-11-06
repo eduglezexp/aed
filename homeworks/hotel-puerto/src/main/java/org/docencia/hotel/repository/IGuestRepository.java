@@ -1,17 +1,14 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Guest;
-import java.util.List;
+import org.docencia.hotel.repository.interfaces.ICrudRepository;
+
 
 /**
  * @author eduglezexp
  * @version 1.0.0
  */
 
-public interface IGuestRepository {
-    boolean existsById(String id);
-    Guest findById(String id);
-    List<Guest> findAll();
-    Guest save(Guest guest);
-    boolean deleteById(String id);
+public interface IGuestRepository extends ICrudRepository<Guest> {
+    
 }

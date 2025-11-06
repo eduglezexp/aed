@@ -1,6 +1,8 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Room;
+import org.docencia.hotel.repository.interfaces.ICrudRepository;
+
 import java.util.List;
 
 /**
@@ -8,11 +10,6 @@ import java.util.List;
  * @version 1.0.0
  */
 
-public interface IRoomRepository {
-    boolean existsById(String id);
-    Room findById(String id);
-    List<Room> findAll();
-    Room save(Room room);
-    boolean deleteById(String id);
+public interface IRoomRepository extends ICrudRepository<Room> {
     List<Room> findByHotelId(String hotelId);
 }

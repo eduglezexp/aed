@@ -1,18 +1,13 @@
 package org.docencia.hotel.repository;
 
-import java.util.List;
-
 import org.docencia.hotel.model.Hotel;
+import org.docencia.hotel.repository.interfaces.ICrudRepository;
 
 /**
  * @author eduglezexp
  * @version 1.0.0
  */
 
-public interface IHotelRepository {
-    boolean existsById(String id);
-    Hotel findById(String id);
-    List<Hotel> findAll();
-    Hotel save(Hotel hotel);
-    boolean deleteById(String id);
+public interface IHotelRepository extends ICrudRepository<Hotel> {
+
 }

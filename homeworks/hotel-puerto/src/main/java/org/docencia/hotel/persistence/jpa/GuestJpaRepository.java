@@ -1,5 +1,18 @@
 package org.docencia.hotel.persistence.jpa;
 
-public interface GuestJpaRepository {
+import org.docencia.hotel.model.Guest;
+import org.docencia.hotel.repository.IGuestRepository;
+import org.springframework.stereotype.Repository;
 
+/**
+ * @author eduglezexp
+ * @version 1.0.0
+ */
+
+@Repository
+public class GuestJpaRepository extends AbstractJpaRepository<Guest, String> implements IGuestRepository {
+
+    protected GuestJpaRepository() {
+        super(Guest.class);
+    }
 }
