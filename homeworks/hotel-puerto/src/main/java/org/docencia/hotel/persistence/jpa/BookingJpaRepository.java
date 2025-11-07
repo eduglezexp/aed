@@ -25,7 +25,6 @@ public class BookingJpaRepository extends AbstractJpaRepository<Booking, String>
      * Constructor por defecto
      */
     public BookingJpaRepository(IBookingRepository repository) { 
-        super(Booking.class); 
         this.repository = repository;
     }
 

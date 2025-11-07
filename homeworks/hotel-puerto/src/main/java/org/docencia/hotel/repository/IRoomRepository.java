@@ -1,7 +1,7 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Room;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.docencia.hotel.repository.interfaces.IJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 
 @Repository
-public interface IRoomRepository extends JpaRepository<Room, String> {
+public interface IRoomRepository extends IJpaRepository<Room, String> {
 
     /**
      * Metodo para obtener una hotel dada su id

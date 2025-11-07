@@ -1,7 +1,7 @@
 package org.docencia.hotel.repository;
 
 import org.docencia.hotel.model.Hotel;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.docencia.hotel.repository.interfaces.IJpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface IHotelRepository extends JpaRepository<Hotel, String> {
+public interface IHotelRepository extends IJpaRepository<Hotel, String> {
 
 }

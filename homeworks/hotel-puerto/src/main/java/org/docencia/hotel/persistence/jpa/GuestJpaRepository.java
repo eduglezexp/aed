@@ -24,7 +24,6 @@ public class GuestJpaRepository extends AbstractJpaRepository<Guest, String> {
      * Constructor por defecto
      */
     public GuestJpaRepository(IGuestRepository repository) {
-        super(Guest.class);
         this.repository = repository;
     }
 

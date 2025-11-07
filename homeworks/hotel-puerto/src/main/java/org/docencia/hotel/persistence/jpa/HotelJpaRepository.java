@@ -24,7 +24,6 @@ public class HotelJpaRepository extends AbstractJpaRepository<Hotel, String> {
      * Constructor por defecto
      */
     public HotelJpaRepository(IHotelRepository repository) {
-        super(Hotel.class);
         this.repository = repository;
     }
 

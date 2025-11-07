@@ -3,7 +3,7 @@ package org.docencia.hotel.repository;
 import java.util.List;
 
 import org.docencia.hotel.model.Booking;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.docencia.hotel.repository.interfaces.IJpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface IBookingRepository extends JpaRepository<Booking, String> {
+public interface IBookingRepository extends IJpaRepository<Booking, String> {
 
     /**
      * Metodo para encontar bookings por la habitacion y un rango de fechas 

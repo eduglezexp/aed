@@ -2,8 +2,11 @@ package org.docencia.hotel.persistence.jpa.abstracts;
 
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 import org.docencia.hotel.persistence.interfaces.ICrudRepository;
+import org.docencia.hotel.repository.interfaces.IJpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author eduglezexp
@@ -12,31 +15,35 @@ import org.docencia.hotel.persistence.interfaces.ICrudRepository;
 
 public abstract class AbstractJpaRepository<T, ID> implements ICrudRepository<T, ID> {
 
-    private final Class<T> repository;
+    private IJpaRepository<T, ID> repository;
     
-    public AbstractJpaRepository(Class<T> repository) {
+    @Autowired
+    public void setRepository(IJpaRepository<T, ID> repository) {
         this.repository = repository;
     }
 
     @Override
     public boolean existsById(ID id) {
-        return false;
+        return repository.existsById(id);
     }
 
     @Override
     public T findById(ID id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
     public List<T> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     @Transactional
     public T save(T entity) {
-        return null;
+        if (entity.getId() == null || entity.getId().isBlank()) {
+            entity.setId(UUID.randomUUID().toString());
+        }
+        return repository.save(entity);
     }
 
     @Override
@@ -45,6 +52,7 @@ public abstract class AbstractJpaRepository<T, ID> implements ICrudRepository<T,
         if (!existsById(id)) {
             return false;
         }
+        repository.deleteById(id);
         return true;
     }
 }

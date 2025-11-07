@@ -25,7 +25,6 @@ public class RoomJpaRepository extends AbstractJpaRepository<Room, String> {
      * Constructor por defecto
      */
     public RoomJpaRepository(IRoomRepository repository) {
-        super(Room.class);
         this.repository = repository;
     }
 
