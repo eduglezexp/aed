@@ -2,7 +2,6 @@ package org.docencia.hotel.persistence.jpa.abstracts;
 
 import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.UUID;
 
 import org.docencia.hotel.persistence.interfaces.ICrudRepository;
 import org.docencia.hotel.repository.interfaces.IJpaRepository;
@@ -40,9 +39,6 @@ public abstract class AbstractJpaRepository<T, ID> implements ICrudRepository<T,
     @Override
     @Transactional
     public T save(T entity) {
-        if (entity.getId() == null || entity.getId().isBlank()) {
-            entity.setId(UUID.randomUUID().toString());
-        }
         return repository.save(entity);
     }
 
