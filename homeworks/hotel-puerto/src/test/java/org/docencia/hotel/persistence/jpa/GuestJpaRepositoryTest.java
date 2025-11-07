@@ -19,6 +19,7 @@ public class GuestJpaRepositoryTest {
     private IGuestRepository repository;
     private Guest baseGuest;
 
+    private String id = "G1";
     private String fullName = "fullname";
     private String email = "email";
     private String phone = "phone";
@@ -27,7 +28,7 @@ public class GuestJpaRepositoryTest {
     @Transactional
 
     void beforeEach() {
-        Guest guest = new Guest(fullName, email, phone);
+        Guest guest = new Guest(id, fullName, email, phone);
         baseGuest = repository.save(guest);
         assertThat(baseGuest.getId()).isNotNull();
     }
@@ -35,6 +36,10 @@ public class GuestJpaRepositoryTest {
     @Test
     @Transactional
     void createReadFindByTitleTest() {
+        String id = baseGuest.getId();
+
+        Guest leida = repository.findById(id).orElse(null);
+        assertThat(leida).isNotNull();
         
     }
 
