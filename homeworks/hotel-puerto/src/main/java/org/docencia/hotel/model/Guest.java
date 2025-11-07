@@ -53,6 +53,20 @@ public class Guest {
     }
 
     /**
+     * Constructor con todas las propiedades 
+     * menos el identificador
+     * @param fullName de la guest
+     * @param email de la guest
+     * @param phone de la guest
+     * @param bookings de la guest
+     */
+    public Guest(String fullName, String email, String phone) {
+        this.fullName = fullName;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    /**
      * Constructor con todas las propiedades
      * @param id de la guest
      * @param fullName de la guest
