@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author eduglezexp
+ * @version 1.0
+ */
+
 @Service
 public class AlumnoService {
 

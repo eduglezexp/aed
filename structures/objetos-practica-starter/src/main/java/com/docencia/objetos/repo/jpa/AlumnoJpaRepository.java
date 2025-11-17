@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface AlumnoJpaRepository extends JpaRepository<AlumnoEntity, Long> {
 
   /**
-   * Método para comprobar si existe un alumno por su email
+   * Metodo para comprobar si existe un alumno por su email
    * @param email del alumno
    * @return true si existe, false en caso contrario
    */
