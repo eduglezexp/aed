@@ -61,9 +61,8 @@ public class JsonServiceNote extends ServiceNoteAbstract {
        try {
             return jsonMapper.readValue(data, Note.class);
         } catch (JsonProcessingException e) {
-            logger.error("Se ha producido un error en la transformacion de data {}", data,  e);
-            return null; 
+            logger.error("Se ha producido un error en la transformacion de data {}", data,  e); 
         }
-        
+        return null;
     }
 }

@@ -2,7 +2,6 @@ package com.docencia.repo.file;
 
 import com.docencia.repo.file.abstracts.FileNoteAbstractRepository;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 public class FileNoteJsonRepository extends FileNoteAbstractRepository{
     

@@ -68,8 +68,12 @@ public abstract class FileNoteAbstractRepository implements INoteRepository {
 
     @Override
     public boolean exists(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+        Note note = new Note(id);
+        List<Note> notes = findAll();
+        if (notes.contains(note)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -102,7 +106,7 @@ public abstract class FileNoteAbstractRepository implements INoteRepository {
     public Note save(Note note) {
        lock.writeLock().lock();
         try {
-            List<Note> notes = readAllInternal();
+            List<Note> notes = findAll();
             if (StringUtils.isEmpty(note.getId()))  {
                 note.setId(UUID.randomUUID().toString());
             }
@@ -117,7 +121,19 @@ public abstract class FileNoteAbstractRepository implements INoteRepository {
 
     @Override
     public boolean delete(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        if (StringUtils.isEmpty(id)) {
+            return false;
+        }
+        lock.writeLock().lock();
+        try {
+            List<Note> notes = readAllInternal();
+            boolean removed = notes.removeIf(note -> Objects.equals(note.getId(), id));
+            if (removed) {
+                writeAllInternal(notes);
+            }
+            return removed;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 }
