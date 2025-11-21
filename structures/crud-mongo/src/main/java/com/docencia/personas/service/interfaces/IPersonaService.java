@@ -1,4 +1,4 @@
-package com.docencia.personas.service;
+package com.docencia.personas.service.interfaces;
 
 import java.util.List;
 

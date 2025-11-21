@@ -1,10 +1,10 @@
-package com.docencia.personas.service.implementation;
+package com.docencia.personas.service;
 
 import org.springframework.stereotype.Service;
 
 import com.docencia.personas.model.Persona;
 import com.docencia.personas.repository.PersonaRepository;
-import com.docencia.personas.service.IPersonaService;
+import com.docencia.personas.service.interfaces.IPersonaService;
 
 import java.util.List;
 
