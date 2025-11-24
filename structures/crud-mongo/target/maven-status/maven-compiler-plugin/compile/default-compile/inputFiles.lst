@@ -1,3 +1,8 @@
+/home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/repository/PersonaRepository.java
+/home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/service/PersonaService.java
+/home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/repository/RolRepository.java
+/home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/service/interfaces/IPersonaService.java
+/home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/model/Rol.java
 /home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/model/Persona.java
 /home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/PersonasApplication.java
 /home/dam/dam/repositories/acceso-a-datos/structures/crud-mongo/src/main/java/com/docencia/personas/model/Direccion.java
