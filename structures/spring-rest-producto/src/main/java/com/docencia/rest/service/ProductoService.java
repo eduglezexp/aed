@@ -6,43 +6,50 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.docencia.rest.model.Producto;
+import com.docencia.rest.model.ProductoEntity;
 import com.docencia.rest.repository.ProductoRepository;
+import com.docencia.rest.repository.interfaces.DetalleProductoRepository;
 import com.docencia.rest.service.interfaces.IProductoService;
 
 @Service
 public class ProductoService implements IProductoService {
 
     private ProductoRepository productoRepository;
+    private DetalleProductoRepository detalleProductoRepository;
 
     @Autowired
     public void setProductoRepository(ProductoRepository productoRepository) {
         this.productoRepository = productoRepository;
     }
 
+    @Autowired
+    public void setDetalleProductoDocument(DetalleProductoRepository detalleProductoRepository) {
+        this.detalleProductoRepository = detalleProductoRepository;
+    }
+
     @Override
-    public Optional<Producto> findById(int id) {
+    public Optional<ProductoEntity> findById(int id) {
         return productoRepository.findById(id);
     }
 
     @Override
-    public Optional<Producto> find(Producto producto) {
+    public Optional<ProductoEntity> find(ProductoEntity producto) {
         return findById(producto.getId());
     }
 
     @Override
-    public List<Producto> findAll() {
+    public List<ProductoEntity> findAll() {
         return productoRepository.findAll();
     }
 
     @Override
-    public Producto save(Producto producto) {
+    public ProductoEntity save(ProductoEntity producto) {
         return productoRepository.save(producto);
     }
 
     @Override
     public boolean deleteById(int id) {
-        Optional<Producto> producto = findById(id);
+        Optional<ProductoEntity> producto = findById(id);
         if (producto.isEmpty()) {
             return false;
         }
@@ -51,7 +58,7 @@ public class ProductoService implements IProductoService {
     }
 
     @Override
-    public boolean delete(Producto producto) {
+    public boolean delete(ProductoEntity producto) {
         if (producto == null) {
             return false;
         }

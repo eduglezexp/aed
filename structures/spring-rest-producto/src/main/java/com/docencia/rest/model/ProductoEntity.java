@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "productos")
-public class Producto {
+public class ProductoEntity {
 
     private int id;
 
@@ -25,15 +25,15 @@ public class Producto {
     @Column(name = "stock")
     private int stock;
 
-    public Producto() {
+    public ProductoEntity() {
 
     }
 
-    public Producto(int id) {
+    public ProductoEntity(int id) {
         this.id = id;
     }
 
-    public Producto(String nombre, BigDecimal precio, int stock) {
+    public ProductoEntity(String nombre, BigDecimal precio, int stock) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -86,7 +86,7 @@ public class Producto {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Producto other = (Producto) obj;
+        ProductoEntity other = (ProductoEntity) obj;
         return id == other.id;
     }
 }
