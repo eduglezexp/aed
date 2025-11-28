@@ -49,7 +49,7 @@ public class ProductoController {
     })
     @GetMapping("/{id}")
     public ResponseEntity<Producto> getProductoById(@PathVariable(value = "id") int productoId) throws ResourceNotFoundException {
-        ProductoEntity producto = productoService.findById(productoId).orElse(null);
+        Producto producto = productoService.findById(productoId).orElse(null);
         if (producto == null) {
             return ResponseEntity.notFound().build();
         }
@@ -62,8 +62,8 @@ public class ProductoController {
             @ApiResponse(responseCode = "404", description = "Producto not found")
     })
     @GetMapping("/get/")
-    public ResponseEntity<ProductoEntity> getProducto(@Valid @RequestBody ProductoEntity producto) throws ResourceNotFoundException {
-        ProductoEntity productoFind = productoService.find(producto).orElse(null);
+    public ResponseEntity<Producto> getProducto(@Valid @RequestBody Producto producto) throws ResourceNotFoundException {
+        Producto productoFind = productoService.find(producto).orElse(null);
         if (productoFind == null) {
             return ResponseEntity.notFound().build();
         }
@@ -76,7 +76,7 @@ public class ProductoController {
             @ApiResponse(responseCode = "400", description = "Bad request")
     })
     @PostMapping("/add/")
-    public ProductoEntity createProducto(@Valid @RequestBody ProductoEntity producto) {
+    public Producto createProducto(@Valid @RequestBody Producto producto) {
         return productoService.save(producto);
     }
 
@@ -103,7 +103,7 @@ public class ProductoController {
             @ApiResponse(responseCode = "404", description = "Producto not found")
     })
     @DeleteMapping("/delete/")
-    public Map<String, Boolean> deleteProducto(@Valid @RequestBody ProductoEntity producto) throws ResourceNotFoundException {
+    public Map<String, Boolean> deleteProducto(@Valid @RequestBody Producto producto) throws ResourceNotFoundException {
         boolean respuesta = productoService.delete(producto); 
         Map<String, Boolean> response = new HashMap<>();
         if (!respuesta) {
