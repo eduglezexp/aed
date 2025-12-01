@@ -10,7 +10,8 @@ import com.docencia.rest.model.ProductoEntity;
 @Mapper(componentModel = "spring", uses = { DetalleProductoMapper.class })
 public interface ProductoMapper {
     ProductoEntity toProducto(Producto producto);
-    Producto toProducto(ProductoEntity entity);
+    Producto toDomain(ProductoEntity entity);
     @Mapping(target = "id", source = "entity.id")
+    @Mapping(target = "detalleProducto", source = "detalle")
     Producto toDomain(ProductoEntity entity, DetalleProductoDocument detalle);
 }

@@ -76,7 +76,7 @@ public class ProductoService implements IProductoService {
         ProductoEntity entityToSave = productoMapper.toProducto(producto);
         entityToSave = productoRepository.save(entityToSave);
         if (producto.getDetalleProducto() == null) {
-            return productoMapper.toProducto(entityToSave);
+            return productoMapper.toDomain(entityToSave);
         }
         DetalleProductoDocument detalleDoc = null;
         detalleDoc = detalleProductoMapper.toDocument(producto.getDetalleProducto());
