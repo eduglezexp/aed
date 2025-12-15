@@ -1,5 +1,5 @@
 import { obtenerTareas, crearTareaRemota } from "./apiTareas";
-import { Tarea } from "./models";
+import { IdTarea, Tarea } from "../model/Tarea";
 
 async function main() {
   console.log("Cargando tareas desde la API...");

@@ -1,5 +1,5 @@
 import { crearTarea, filtrarTareas } from "./tareas";
-import { Tarea, FiltroTarea } from "./models";
+import { Tarea, FiltroTarea } from "../model/Tarea";
 
 let tareas: Tarea[] = [
   crearTarea(1, "Estudiar TS"),

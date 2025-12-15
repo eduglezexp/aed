@@ -1,4 +1,5 @@
-import { Tarea, IdTarea, FiltroTarea } from "./models";
+import { FiltroTarea, IdTarea, Tarea } from "../model/Tarea";
+
 
 /**
  * Crea una nueva tarea a partir de un titulo.

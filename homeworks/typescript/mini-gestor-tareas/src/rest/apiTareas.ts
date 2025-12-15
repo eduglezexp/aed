@@ -1,4 +1,4 @@
-import { Tarea, IdTarea } from "./models";
+import { IdTarea, Tarea } from "../model/Tarea";
 
 const API_URL = "http://localhost:3000/tareas";
 
