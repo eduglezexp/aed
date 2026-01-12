@@ -3,8 +3,8 @@ import {
   crearTareaRemota,
   actualizarTareaRemota,
   borrarTareaRemota,
-} from "../src/apiTareas";
-import { Tarea } from "../src/models";
+} from "../src/rest/apiTareas";
+import { Tarea } from "../src/model/Tarea";
 
 // Hacemos que TypeScript sepa que vamos a mockear fetch
 declare const global: typeof globalThis & {
