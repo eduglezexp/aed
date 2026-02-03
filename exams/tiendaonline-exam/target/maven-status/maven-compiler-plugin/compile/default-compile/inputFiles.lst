@@ -1,0 +1,14 @@
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\controller\ClienteController.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\model\Cliente.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\model\ClienteDetalles.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\model\Pedido.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\repository\ClienteDetallesRepository.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\repository\ClienteRepository.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\repository\PedidoRepository.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\ClienteDetallesService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\ClienteService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\interfaces\IClienteDetallesService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\interfaces\IClienteService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\interfaces\IPedidoService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\service\PedidoService.java
+C:\Users\eduex\Downloads\gonzalez-exposito-eduardo-tiendaonline-exam (1)\tiendaonline-exam\src\main\java\com\tiendaonline\TiendaOnlineApplication.java
